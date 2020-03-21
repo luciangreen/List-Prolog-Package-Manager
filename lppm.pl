@@ -51,15 +51,14 @@ lppm_start_server(Port) :-
 
 																								      :- http_handler('/landing', landing_pad, []).
 
-		/**																						      landing_pad(Request) :-
+																				      landing_pad(Request) :-
 																								              member(method(post), Request), !,
 																									              http_read_data(Request, Data, []),
 																										              format('Content-type: text/html~n~n', []),
 																											      	format('<p>', []),
-**/
 %%writeln1(Data)
 
-lp(Data):-
+%%lp(Data):-
 
 Data=[user=User1,repository=Repository1,description=Description1,dependencies=Dependencies1
 ,submit=_],
@@ -199,7 +198,7 @@ lppm_install(User1,Repository1) :-
 	%%lppm_get_manifest(User1,Repository1,_Description,Dependencies1),
 	lppm_get_registry(LPPM_registry_term1),
 	member([User1,Repository1,_Description,Dependencies1],LPPM_registry_term1),
-	(repeat,
+	(%%repeat,
 	concat_list(["Please enter path to install ",User1,"/",Repository1," to: (e.g. /Users/user on Mac or C:/Users/Name/Prolog on Windows)."],Text2),
 	writeln1(Text2),read_string(user_input, "\n", "\r", _, Path1),
 	(working_directory(_,Path1)->true;(concat_list(["Warning: ",Path1," doesn't exist."],Text3),writeln1(Text3),fail))),
@@ -209,7 +208,9 @@ lppm_install(User1,Repository1) :-
 	
 	findall(_,(member(Dependency2,Dependencies2),Dependency2=[User3,Repository3],
 	concat_list(["git clone https://github.com/",User3,"/",Repository3,".git"],Command3),
- 	catch(bash_command(Command3,_), _, (concat_list(["Error: Can't clone ",User3,"/",Repository3," repository on GitHub."],Text4),writeln1(Text4),abort))),_).
+ 	catch(bash_command(Command3,_), _, (concat_list(["Warning."%%"Error: Can't clone ",User3,"/",Repository3," repository on GitHub."
+ 	],Text4),writeln1(Text4)%%,abort
+ 	))),_).
 	%%concat_list(["git pull https://github.com/",User3,"/",Repository3,".git master"],Command4),
  	%%catch(bash_command(Command4,_), _, (concat_list(["Error: Can't pull ",User3,"/",Repository3," repository on GitHub."],Text5),writeln1(Text5),abort))),_).
 	
