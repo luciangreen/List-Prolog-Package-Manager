@@ -13,7 +13,7 @@
 :- use_module(library(http/http_client)).
 :- http_handler('/', web_form, []).
 
-:- include('la_strings.pl'). %% Requires lpi
+:- include('../listprologinterpreter/la_strings.pl'). %% Requires lpi
 
 lppm_start_server(Port) :-
         http_server(http_dispatch, [port(Port)]).
@@ -210,7 +210,7 @@ lppm_install(User1,Repository1) :-
 	concat_list(["git clone https://github.com/",User3,"/",Repository3,".git"],Command3),
  	catch(bash_command(Command3,_), _, (concat_list(["Warning."%%"Error: Can't clone ",User3,"/",Repository3," repository on GitHub."
  	],Text4),writeln1(Text4)%%,abort
- 	))),_).
+ 	))),_),!.
 	%%concat_list(["git pull https://github.com/",User3,"/",Repository3,".git master"],Command4),
  	%%catch(bash_command(Command4,_), _, (concat_list(["Error: Can't pull ",User3,"/",Repository3," repository on GitHub."],Text5),writeln1(Text5),abort))),_).
 	
