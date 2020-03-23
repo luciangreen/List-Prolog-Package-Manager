@@ -1,3 +1,5 @@
+<img src="https://1.bp.blogspot.com/-9hHH7JvCF7A/XngF6CFvkaI/AAAAAAAAHaI/UNHd5hvUetwGiLLIi74MkLYkpUce8H3iACLcBGAsYHQ/s1600/Screen%2BShot%2B2020-03-23%2Bat%2B11.36.26%2Bam.png" alt="Lucian Academy as Boxes in an L-Shape">
+
 # List-Prolog-Package-Manager (LPPM)
 
 Registry manager and installer for GitHub repositories (of any language) with dependencies
