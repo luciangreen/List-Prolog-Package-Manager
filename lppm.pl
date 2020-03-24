@@ -42,7 +42,7 @@ lppm_start_server(Port) :-
 									  		  input([name=description, type=textarea])
 											  		      ]),
 													      		p([], [
-																	  label([for=dependencies],'Dependencies: (e.g. [["User","Repository"], ...] or []'),
+																	  label([for=dependencies],'Dependencies: (e.g. [["User","Repository"], ...] or [])'),
 																	  		  input([name=dependencies, type=textarea])
 																			  		      ]),
 																			  		      
