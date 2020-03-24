@@ -13,7 +13,7 @@
 :- use_module(library(http/http_client)).
 :- http_handler('/', web_form, []).
 
-:- include('../listprologinterpreter/la_strings.pl'). %% Requires lpi
+:- include('la_strings.pl'). %% Move la_strings and the contents of the repository into the root folder
 
 lppm_start_server(Port) :-
         http_server(http_dispatch, [port(Port)]).
@@ -172,7 +172,9 @@ format(Atom1, [])),_),
 																															      	
 																															      																												      	format('</table>', []),
 																															      																												      	
-																															      																												      	writeln("\nPackage uploading instructions:\n\n	Enter registry entries for List Prolog Package Manager (LPPM) packages by visiting http://127.0.0.1:8001/.")
+																															      																												      	writeln("\nPackage uploading instructions:\n\n	Enter registry entries for List Prolog Package Manager (LPPM) packages by visiting http://127.0.0.1:8001/."),
+																															      																												      																																      																												      	format('NB. The luciangreen/Text-to-Breasonings repository requires <a href="https://github.com/luciangreen/Text-to-Breasonings">special instructions</a>.', [])
+
 .																														
 
 string(String) --> list(String).
@@ -180,7 +182,7 @@ string(String) --> list(String).
 list([]) --> [].
 list([L|Ls]) --> [L], list(Ls).
 
-%% You can install without the repository being in the registry, meaning LPPM doesn't require a registry
+%% You can install without the repository being in the registry, meaning LPPM doesn't require a registry x
 
 %% may comment out lppm_get_manifest
 lppm_get_manifest(User1,Repository1,Description,Dependencies1) :-
