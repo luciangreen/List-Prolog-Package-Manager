@@ -15,9 +15,6 @@ Please read the following instructions on how to install the project on your com
 
 Install SWI-Prolog for your machine.
 
-Install List Prolog Interpreter Repository (https://github.com/luciangreen/listprologinterpreter).
-
-
 # Installing and Running List Prolog Package Manager
 
 * Download the repositories above and save the files in a single folder, the ROOT folder.
