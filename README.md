@@ -13,7 +13,7 @@ Please read the following instructions on how to install the project on your com
 
 # Prerequisites
 
-Install SWI-Prolog for your machine.
+* Install <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine.
 
 # Installing and Running List Prolog Package Manager
 
