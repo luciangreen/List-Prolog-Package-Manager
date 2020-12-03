@@ -18,6 +18,10 @@ Please read the following instructions on how to install the project on your com
 # Installing and Running List Prolog Package Manager
 
 * Download the repositories above and save the files in a single folder, the ROOT folder.
+```
+git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
+```
+
 * Load `lppm` by entering `['lppm.pl'].` in SWI-Prolog and run with the command e.g. `lppm_start_server(8001).` on the machine that is a local or remote host.
 * In the web browser, go to `http://127.0.0.1:8001/` to upload registry entries.  Take care to enter double quotes around all strings.  The registry will not accept badly formatted input.  To update an entry, re-enter it with the same user and repository.
 * In the web browser, view the registry at `http://127.0.0.1:8001/registry`.
