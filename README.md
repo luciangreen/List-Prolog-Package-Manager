@@ -20,6 +20,7 @@ Please read the following instructions on how to install the project on your com
 * Download the repositories above and save the files in a single folder, the ROOT folder.
 ```
 git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
+cd List-Prolog-Package-Manager
 ```
 
 * Load `lppm` by entering `['lppm.pl'].` in SWI-Prolog and run with the command e.g. `lppm_start_server(8001).` on the machine that is a local or remote host.

@@ -201,7 +201,7 @@ lppm_install(User1,Repository1) :-
 	lppm_get_registry(LPPM_registry_term1),
 	member([User1,Repository1,_Description,Dependencies1],LPPM_registry_term1),
 	(%%repeat,
-	concat_list(["Please enter path to install ",User1,"/",Repository1," to: (e.g. /Users/user/ on Mac or C:/Users/Name/Prolog/ on Windows)."],Text2),
+	concat_list(["Please enter path to install ",User1,"/",Repository1," to: (e.g. ../ to install at the same level as List Prolog Package Manager)."],Text2),
 	writeln1(Text2),read_string(user_input, "\n", "\r", _, Path1),
 	(working_directory(_,Path1)->true;(concat_list(["Warning: ",Path1," doesn't exist."],Text3),writeln1(Text3),fail))),
 	
