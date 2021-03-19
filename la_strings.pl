@@ -30,7 +30,7 @@ shell1(Command) :-
 				(bash_command(Command,_)->
 					true;
 					(writeln(["Failed shell1 command: ",Command]),abort)
-				).
+				),!.
 
 bash_command(Command, Output) :-
         setup_call_cleanup(process_create(path(bash),
