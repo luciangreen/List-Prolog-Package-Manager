@@ -11,18 +11,40 @@ Registry manager and installer for GitHub repositories (of any language) with de
 
 Please read the following instructions on how to install the project on your computer for installing repositories with dependencies.
 
+* <a href="https://github.com/luciangreen">A list of my repositories in SWI-Prolog.</a>
+
 # Prerequisites
 
-* Install <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine.
+* Please download and install SWI-Prolog for your machine at `https://www.swi-prolog.org/build/`.
 
-# Installing and Running List Prolog Package Manager
+* Check the prerequisites for the specific repository to install.
 
-* Download the repositories above and save the files in a single folder, the ROOT folder.
+# 1. Install manually
+
+* Manually download the repositories listed under "Install manually" for the repository.
+
+# 2. Or Install from List Prolog Package Manager (LPPM)
+
+* Download the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>:
+
 ```
 git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
 cd List-Prolog-Package-Manager
 swipl
+['lppm'].
+lppm_install("luciangreen","<Name of Repository>")
+halt
 ```
+
+* where <Name of Repository> is replaced with the name of the repository.
+
+# Running
+
+`cd <Name of Repository>` (the name of the repository)
+`swipl`
+`<Running instructions for the repository>` (see the repository instructions)
+
+# Optional Web Interface
 
 * Load `lppm` by entering `['lppm.pl'].` in SWI-Prolog and run with the command e.g. `lppm_start_server(8001).` on the machine that is a local or remote host.
 * In the web browser, go to `http://127.0.0.1:8001/` to upload registry entries.  Take care to enter double quotes around all strings.  The registry will not accept badly formatted input.  To update an entry, re-enter it with the same user and repository.
