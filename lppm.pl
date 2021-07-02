@@ -228,14 +228,14 @@ lppm_install(User1,Repository1) :-
  	))),_),!.
  	
 find_all_dependencies(_,_,[],A,A) :- !.
-find_all_dependencies(LPPM_registry_term1,Orig,Dependencies1,Dependencies8,Dependencies3) :-
+find_all_dependencies(LPPM_registry_term1,Dependencies1,Dependencies8,Dependencies3) :-
 	Dependencies1=[[User1a,Repository2]|Dependencies9],
-	(member([User1a,Repository2,_Description,Dependencies7],LPPM_registry_term1)->true;abort),
+	(member([User1a,Repository2,_Description,Dependencies7],LPPM_registry_term1)->true;(concat_list(["Error: Missing LPPM_registry.txt entry: [",User1a,",",Repository2,"]."],Note_b),writeln(Note_b),abort)),
 	append(Dependencies8,[[User1a,Repository2]],Dependencies10),
 
 		subtract(Dependencies7,Dependencies10,Dependencies11),
-find_all_dependencies(LPPM_registry_term1,Orig,Dependencies11,Dependencies10,Dependencies6),
-	find_all_dependencies(LPPM_registry_term1,Orig,Dependencies9,Dependencies6,Dependencies3).
+find_all_dependencies(LPPM_registry_term1,Dependencies11,Dependencies10,Dependencies6),
+	find_all_dependencies(LPPM_registry_term1,Dependencies9,Dependencies6,Dependencies3).
 
 	
 	%%concat_list(["git pull https://github.com/",User3,"/",Repository3,".git master"],Command4),
