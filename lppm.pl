@@ -230,7 +230,7 @@ lppm_install(User1,Repository1) :-
 find_all_dependencies(_,_,[],A,A) :- !.
 find_all_dependencies(LPPM_registry_term1,Dependencies1,Dependencies8,Dependencies3) :-
 	Dependencies1=[[User1a,Repository2]|Dependencies9],
-	(member([User1a,Repository2,_Description,Dependencies7],LPPM_registry_term1)->true;(concat_list(["Error: Missing LPPM_registry.txt entry: [",User1a,",",Repository2,"]."],Note_b),writeln(Note_b),abort)),
+	(member([User1a,Repository2,_Description,Dependencies7],LPPM_registry_term1)->true;(concat_list(["Error: Missing lppm_registry.txt entry: [",User1a,",",Repository2,"]."],Note_b),writeln(Note_b),abort)),
 	append(Dependencies8,[[User1a,Repository2]],Dependencies10),
 
 		subtract(Dependencies7,Dependencies10,Dependencies11),
