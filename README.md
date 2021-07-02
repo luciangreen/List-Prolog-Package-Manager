@@ -6,7 +6,7 @@ Registry manager and installer for GitHub repositories (of any language) with de
 
 * lppm.pl - starts a local or remote Prolog server to host the registry, where a repository entry on the registry can be uploaded or edited by reuploading, and GitHub repositories (a.k.a. packages) in the registry can be installed when in the same folder as the registry on the server.
 * lppm_registry.pl - contains users, repositories, descriptions and dependencies (lists of users and repositories).
-* LPPM now installs repositories needed by repositories, etc. without needing them in the registry.
+* LPPM now installs repositories needed by repositories, etc. without needing them in the first registry entry.
 
 # Getting Started
 
