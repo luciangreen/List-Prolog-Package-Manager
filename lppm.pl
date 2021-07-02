@@ -206,8 +206,8 @@ lppm_install(User1,Repository1) :-
 	(working_directory(_,Path1)->true;(concat_list(["Warning: ",Path1," doesn't exist."],Text3),writeln1(Text3),fail))),
 	
 	%catch((true, call_with_time_limit(1,
-		find_all_dependencies(LPPM_registry_term1,[[User1,Repository1%%,Description,Dependencies1
-	]],Dependencies1,[],Dependencies1a)
+		find_all_dependencies(LPPM_registry_term1,%[[User1,Repository1]],%%,Description,Dependencies1
+	Dependencies1,[],Dependencies1a)
 		,
 		%)),
  %         time_limit_exceeded,
@@ -227,7 +227,7 @@ lppm_install(User1,Repository1) :-
  	],Text4),writeln1(Text4)%%,abort
  	))),_),!.
  	
-find_all_dependencies(_,_,[],A,A) :- !.
+find_all_dependencies(_,[],A,A) :- !.
 find_all_dependencies(LPPM_registry_term1,Dependencies1,Dependencies8,Dependencies3) :-
 	Dependencies1=[[User1a,Repository2]|Dependencies9],
 	(member([User1a,Repository2,_Description,Dependencies7],LPPM_registry_term1)->true;(concat_list(["Error: Missing lppm_registry.txt entry: [",User1a,",",Repository2,"]."],Note_b),writeln(Note_b),abort)),
