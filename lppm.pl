@@ -13,7 +13,9 @@
 :- use_module(library(http/http_client)).
 :- http_handler('/', web_form, []).
 
-:- include('la_strings.pl'). %% Move la_strings and the contents of the repository into the root folder
+:- include('la_strings.pl').
+
+%:- include('la_strings.pl'). %% Move la_strings and the contents of the repository into the root folder
 
 lppm_start_server(Port) :-
         http_server(http_dispatch, [port(Port)]).
