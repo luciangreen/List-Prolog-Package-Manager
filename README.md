@@ -29,6 +29,8 @@ Please read the following instructions on how to install the project on your com
 * Download the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>:
 
 ```
+mkdir GitHub
+cd GitHub/
 git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
 cd List-Prolog-Package-Manager
 swipl
