@@ -36,7 +36,8 @@ cd List-Prolog-Package-Manager
 swipl
 ['lppm'].
 lppm_install("luciangreen","<Name of Repository>").
-halt
+../
+halt.
 ```
 
 * where <Name of Repository> is replaced with the name of the repository.
