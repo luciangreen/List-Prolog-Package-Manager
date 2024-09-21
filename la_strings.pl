@@ -37,7 +37,7 @@ bash_command(Command, Output) :-
                 ['-c', Command],
                 [stdout(pipe(Out))]),
         read_string(Out, _, Output),
-        close(Out)).
+        close(Out)),!.
 
 concat_list(A1,B):-
 	A1=[A|List],
@@ -47,7 +47,7 @@ concat_list(A,[],A):-!.
 concat_list(A,List,B) :-
 	List=[Item|Items],
 	string_concat(A,Item,C),
-	concat_list(C,Items,B).
+	concat_list(C,Items,B),!.
 
 append_list(A1,B):-
 	A1=[A|List],
@@ -57,4 +57,4 @@ append_list(A,[],A):-!.
 append_list(A,List,B) :-
 	List=[Item|Items],
 	append(A,[Item],C),
-	append_list(C,Items,B).
+	append_list(C,Items,B),!.
